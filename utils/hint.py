@@ -1,7 +1,7 @@
 from os import path
 from osgeo import gdal
 
-out_path = "./DSM_split/"
+out_path = "../DSM_split/"
 output_filename = "tile_"
 cpt = 0
 
