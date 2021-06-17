@@ -61,10 +61,14 @@ if len(loc_result['LocationResult']) == 0:
     api_guess_link = f'http://loc.geopunt.be/geolocation/suggestion?q={address}'
     guess_result = requests.get(api_guess_link).json()
     #print('this is guess result', guess_result)
+
+# and here we should ask for another input to correct the address
+# but I omit this part for now
+
 else: #print('this is locresult', loc_result)
       print('yes')
 
-# Let's assume we got exact address response.
+# Let's assume we got an exact address response.
 # So we are extracting coordinates
 
 X_Lambert72 = loc_result['LocationResult'][0]['Location']['X_Lambert72']
@@ -92,7 +96,8 @@ box_DB = shape['geometry'].bounds
 
 # we should create a database of geotiffs coordinates as well
 # we could you the code from the client
-# here it id below as we have it in our repo as hint
+# here it is below as we have it in our repo as a hint
+# though we should change it to slice only our house box coordinates
 """
 out_path = "../DSM_split/"
 output_filename = "tile_"
