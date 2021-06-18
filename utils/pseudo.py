@@ -13,10 +13,11 @@ import json
 #working with .shp and .gtif
 import geopandas as gpd
 from osgeo import gdal
+from shapely.geometry import Point
 
 # some magic to make geopandas work
-from shapely import speedups
-speedups.disable()
+#from shapely import speedups
+#speedups.disable()
 
 # imports for 3D rendering
 from ipywidgets import FloatSlider, FloatRangeSlider, Dropdown, Select, VBox, AppLayout, jslink
@@ -24,12 +25,11 @@ from ipygany import Scene, IsoColor, PolyMesh, Component, ColorBar, colormaps
 
 # optional import (not used yet)
 # from scipy.spatial import cKDTree
-# from shapely.geometry import Point
 # from shapely.ops import nearest_points
 
 # so, the flow of the program could be as follow:
 # 0. Client gives a specific address
-# 1. We convert it coordinates with API
+# 1. We convert it into coordinates with API
 # 2. We found this coordinates in our database as a box plain
 # 3. We found the corresponding geotiff and slice a small part related
 # 4. We plot this slice into 3D.
@@ -73,23 +73,23 @@ else: #print('this is locresult', loc_result)
 
 X_Lambert72 = loc_result['LocationResult'][0]['Location']['X_Lambert72']
 Y_Lambert72 = loc_result['LocationResult'][0]['Location']['Y_Lambert72']
-print(X_Lambert72,Y_Lambert72)
-print(type(X_Lambert72),type(Y_Lambert72))
+#print(X_Lambert72,Y_Lambert72)
+#print(type(X_Lambert72),type(Y_Lambert72))
 # 150429.1 169626.88 type float
 
 # ===== PART 2 ===== 
 # ----- Find coordinates in our database -----
 
 # first we have to create a database of coordinates
-shape = gpd.read_file('../data/Belgium/Ali_CaBo.shp')
-box_DB = shape['geometry'].bounds
+
+point = Point(X_Lambert72, Y_Lambert72)
+shape = gpd.read_file('../data/Belgium/Bpn_CaBu.shp', mask=point)
+box_coords = shape['geometry'].bounds
 
 ##############################
 # and here comes pseudo code #
 ##############################
 
-# box = box_DB.Nearest_point(X_Lambert72,Y_Lambert72)
-# https://gis.stackexchange.com/questions/222315/geopandas-find-nearest-point-in-other-dataframe
 
 # ===== PART 3 =====
 # ----- Find corresponding geotiff file -----
