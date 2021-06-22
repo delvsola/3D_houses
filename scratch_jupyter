@@ -1,0 +1,88 @@
+
+
+import xarray
+import plotly.graph_objects as go
+import plotly.io as pio
+pio.renderers.default='browser'
+import pandas as pd
+from osgeo import gdal
+from osgeo import osr
+from pprint import pprint
+
+#%%import rioxarray
+
+
+
+
+xds = xarray.open_dataarray('D:\Becode_Bouman3.31\BXL-Bouman-3.31-main\content\\3.data_tools\data_visualization\\3D_house\DSM\DHMVIIDSMRAS1m_k01\GeoTIFF\DHMVIIDSMRAS1m_k01.tif')
+
+# xds.plot()
+# xds.shape
+xds
+
+#%%
+
+
+xdsc = xds.rio.clip_box(
+    minx=145000,
+    miny=238000,
+    maxx=146000,
+    maxy=239000,
+
+)
+
+xdsc
+xdsc.plot()
+
+#%%
+
+m = xdsc.values
+p = m.squeeze()
+mn = pd.DataFrame(p)
+
+fig = go.Figure(data=[go.Surface(z=p)])
+fig.update_traces(contours_z=dict(show=True, usecolormap=True,
+                                  highlightcolor="limegreen", project_z=True))
+fig.update_layout(title="TEST", autosize= True,
+                  scene_camera_eye=dict(x=1.87, y=0.88, z=-0.64),
+                  width=500, height=500,
+                  margin=dict(l=65, r=50, b=65, t=90)
+                  )
+fig.show()
+
+
+#%%
+
+# To get the coordinates of the corners of your geotiff do the following
+img = 'D:\Becode_Bouman3.31\BXL-Bouman-3.31-main\content\\3.data_tools\data_visualization\\3D_house\DSM\DHMVIIDSMRAS1m_k01\GeoTIFF\DHMVIIDSMRAS1m_k01.tif'
+ds = gdal.Open(img)
+width = ds.RasterXSize
+height = ds.RasterYSize
+gt = ds.GetGeoTransform()
+minx = gt[0]
+miny = gt[3] + width*gt[4] + height*gt[5]
+maxx = gt[0] + width*gt[1] + height*gt[2]
+maxy = gt[3]
+
+print (width, height, minx, miny, maxx, maxy)
+info = gdal.Info(ds)
+pprint (info)
+
+#%%
+
+ds.GetGCPSpatialRef()
+img.GetFileMetadata()
+
+#%%
+
+src = gdal.Open(img)
+ulx, xres, xskew, uly, yskew, yres  = src.GetGeoTransform()
+lrx = ulx + (src.RasterXSize * xres)
+lry = uly + (src.RasterYSize * yres)
+
+# ul = Upper-Left, lr= Lower Right
+ulx, uly, lrx, lry
+
+#%%
+
+
