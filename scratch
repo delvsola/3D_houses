@@ -1,0 +1,42 @@
+#standart imports
+import os
+import xarray
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import geopandas as gpd
+from osgeo import gdal
+from shapely.ops import nearest_points
+from shapely.geometry import Point, MultiPoint
+import requests
+import json
+from pprint import pprint
+url = 'https://loc.geopunt.be/v4/Location'
+parameters = {'q': input()
+              }
+response = requests.get(url, params=parameters)
+coord = response.json()
+
+X_Lambert72 = coord['LocationResult'][0]['Location']['X_Lambert72']
+Y_Lambert72 = coord['LocationResult'][0]['Location']['Y_Lambert72']
+print(X_Lambert72,Y_Lambert72)
+pprint (coord)
+
+point = Point(X_Lambert72, Y_Lambert72)
+
+shape = gpd.read_file('D:\Becode_Bouman3.31\BXL-Bouman-3.31-main\content\\3.data_tools\data_visualization\\3D_house\Project\\3D_houses\Belgium\Bpn_Rebu.shp', mask=point )
+box_DB = shape['geometry'].bounds
+
+print(shape)
+
+# pd.set_option("display.max_rows", None)
+# pd.set_option("display.max_columns", None)
+print(type(box_DB))
+print(box_DB)
+
+# destination = MultiPoint([X_Lambert72,Y_Lambert72])
+# box = nearest_points(box_DB, destination)
+# print (box)
+# AttributeError: 'float' object has no attribute '_ndim'
+# x = (box_DB['minx'] <= X_Lambert72) & (box_DB['maxx']>= X_Lambert72) & (box_DB['miny']<= Y_Lambert72) & (box_DB['maxy']>= Y_Lambert72)
+# print (x)
