@@ -1,0 +1,33 @@
+import requests
+import json
+from pprint import pprint
+url = 'https://loc.geopunt.be/v4/Location'
+parameters = {'q': input()
+              }
+response = requests.get(url, params=parameters)
+coord = response.json()
+
+X_Lambert72 = coord['LocationResult'][0]['Location']['X_Lambert72']
+Y_Lambert72 = coord['LocationResult'][0]['Location']['Y_Lambert72']
+print(X_Lambert72,Y_Lambert72)
+# pprint (coord)
+#
+# {'LocationResult': [{'BoundingBox': {'LowerLeft': {'Lat_WGS84': 50.882934540348195,
+#                                                    'Lon_WGS84': 4.074307703384972,
+#                                                    'X_Lambert72': 129279.5,
+#                                                    'Y_Lambert72': 174771.23},
+#                                      'UpperRight': {'Lat_WGS84': 50.93276097413839,
+#                                                     'Lon_WGS84': 4.150314236116481,
+#                                                     'X_Lambert72': 134644.42,
+#                                                     'Y_Lambert72': 180295.61}},
+#                      'FormattedAddress': 'Affligem',
+#                      'Housenumber': None,
+#                      'ID': 124,
+#                      'Location': {'Lat_WGS84': 50.907853998201695,
+#                                   'Lon_WGS84': 4.1122908023491975,
+#                                   'X_Lambert72': 131961.96,
+#                                   'Y_Lambert72': 177533.42},
+#                      'LocationType': 'crab_gemeente',
+#                      'Municipality': 'Affligem',
+#                      'Thoroughfarename': None,
+#                      'Zipcode': None}]}
