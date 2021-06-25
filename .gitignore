@@ -153,4 +153,9 @@ Thumbs.db
 .idea/
 .visual/
 
+# Project related
+static/dsm/*
+static/dtm/*
+static/shp/*
+
 # End of https://www.toptal.com/developers/gitignore/api/python
