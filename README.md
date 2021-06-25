@@ -1,27 +1,15 @@
+### 3D houses
 
-<!-- [![Contributors][contributors-shield]][contributors-url] -->
-<!-- [![Forks][forks-shield]][forks-url] -->
-<!-- [![Stargazers][stars-shield]][stars-url] -->
-<!--[![MIT License][license-shield]][license-url] -->
-<!--[![Issues][issues-shield]][issues-url] -->
+![Demo](/assets/Castle_demo.png "overwiev")
 
-  <h2 align="center">3D houses</h2>
-  <p align="center">
-    <a href="https://github.com/delvsola/3D_houses">
-    <img src="https://github.com/delvsola/3D_houses/blob/readme/assets/Castle_demo.png" alt="Logo">
-  </a>
-
-  <h3 align="center">
     3D rendering of the Gravensteen, Gent
-  </h3>
 
-</p>
 
-<h2> Description </h2>
+## Description 
 
 Our program will render the 3D Model of a building at the provided address using open data provided by Vlanderen Geopunt service.
 
-<h2> Added values </h2>
+## Added values 
 
 Clear benefits of our programme are:
 
@@ -30,7 +18,7 @@ Clear benefits of our programme are:
 3. Accessible - all you need to get the image is to provide the address (implemented in version 1.1)
 
 
-<h2> Installation </h2>
+## Installation 
 
 1. Clone the repo
 2. Install the required libraries
@@ -41,11 +29,11 @@ Clear benefits of our programme are:
 pip3 install -r requirements.txt
 ```
 
-<h2> Programme's logic </h2>
+## Programme's logic
 
 ![Logic](/assets/Logic.png "overwiev")
 
-<h2> Authors </h2>
+## Authors 
 <a href="https://github.com/delvsola"><strong>Solan</strong></a>  
 <a href="https://github.com/VincentKervyn"><strong>Vincent</strong></a>  
 <a href="https://github.com/nicesoul"><strong>Vadym</strong></a>  
@@ -71,19 +59,4 @@ Distributed under the MIT License.
 Please, contact any of the authors via GitHub.
 
 ## Acknowledgements
-Thank you, Bouman! :)
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/delvsola/3D_houses.svg?style=for-the-badge
-[contributors-url]: https://github.com/delvsola/3D_houses/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/delvsola/3D_houses.svg?style=for-the-badge
-[forks-url]: https://github.com/delvsola/3D_houses/network/members
-[stars-shield]: https://img.shields.io/github/stars/delvsola/3D_houses.svg?style=for-the-badge
-[stars-url]: https://github.com/delvsola/3D_houses/stargazers
-[issues-shield]: https://img.shields.io/github/issues/delvsola/3D_houses.svg?style=for-the-badge
-[issues-url]: https://github.com/delvsola/3D_houses/issues
-[license-shield]: https://img.shields.io/github/license/delvsola/3D_houses.svg?style=for-the-badge
-[license-url]: https://github.com/delvsola/3D_houses/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
+Thank you, Solan! :)
