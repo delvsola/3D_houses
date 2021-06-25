@@ -8,7 +8,7 @@
   <h2 align="center">3D houses</h2>
   <p align="center">
     <a href="https://github.com/delvsola/3D_houses">
-    <img src="https://github.com/delvsola/3D_houses/blob/readme/logo_Bouman_3.31.png" alt="Logo" width="200" height="200">
+    <img src="https://github.com/delvsola/3D_houses/blob/readme/assets/Castle_demo.png" alt="Logo">
   </a>
 
   <h3 align="center">
@@ -35,12 +35,17 @@ Our program will render the 3D Model of a building at the provided address.
 pip3 install -r requirements.txt
 ```
 
-<h2> Starting and running</h2>
+<h2> Added values </h2>
 
+Clear benefits of our programme are:
 
+1. Lightweight - you don't need to download any of the geodata, all files are stored in the cloud.
+2. Fast - your result is ready in a second
+3. Accessible - all you need to get the image is to provide the address (implemented in version 1.1)
 
-<h2> Output </h2>
+<h2> Programme's logic </h2>
 
+<a href="https://github.com/delvsola/3D_houses/blob/readme/assets/HOW_to_3D_house.png" alt="Image of programme's logic">
 
 
 <h2> Authors </h2>
