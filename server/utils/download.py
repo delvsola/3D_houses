@@ -3,6 +3,7 @@ from zipfile import ZipFile
 from threading import Thread
 import os
 
+
 def extract_raster(zp: str, fp: str, filename: str, is_dsm: bool = True):
     with ZipFile(zp) as z:
         with open(f"./static/{'dsm' if is_dsm else 'dtm'}/{filename}",
