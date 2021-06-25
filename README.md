@@ -43,8 +43,7 @@ pip3 install -r requirements.txt
 
 <h2> Programme's logic </h2>
 
-<img src="https://github.com/delvsola/3D_houses/blob/readme/assets/Logic.png" alt="Image of programme's logic">
-
+![Logic](/assets/Logic.png "overwiev")
 
 <h2> Authors </h2>
 <a href="https://github.com/delvsola"><strong>Solan</strong></a>  
