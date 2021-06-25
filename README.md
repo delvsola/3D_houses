@@ -12,16 +12,22 @@
   </a>
 
   <h3 align="center">
-    3D buildings rendering using open data as a part of Data&AI training at <a href="https://github.com/becodeorg"><strong>BeCode</strong></a>
-    <br />
-
+    3D rendering of the Gravensteen, Gent
   </h3>
 
 </p>
 
 <h2> Description </h2>
 
-Our program will render the 3D Model of a building at the provided address. 
+Our program will render the 3D Model of a building at the provided address using open data provided by Vlanderen Geopunt service.
+
+<h2> Added values </h2>
+
+Clear benefits of our programme are:
+
+1. Lightweight - you don't need to download any of the geodata, all files are stored in the cloud.
+2. Fast - your result is ready in a second
+3. Accessible - all you need to get the image is to provide the address (implemented in version 1.1)
 
 
 <h2> Installation </h2>
@@ -35,17 +41,9 @@ Our program will render the 3D Model of a building at the provided address.
 pip3 install -r requirements.txt
 ```
 
-<h2> Added values </h2>
-
-Clear benefits of our programme are:
-
-1. Lightweight - you don't need to download any of the geodata, all files are stored in the cloud.
-2. Fast - your result is ready in a second
-3. Accessible - all you need to get the image is to provide the address (implemented in version 1.1)
-
 <h2> Programme's logic </h2>
 
-<a href="https://github.com/delvsola/3D_houses/blob/readme/assets/Logic.png" alt="Image of programme's logic">
+<img src="https://github.com/delvsola/3D_houses/blob/readme/assets/Logic.png" alt="Image of programme's logic">
 
 
 <h2> Authors </h2>
